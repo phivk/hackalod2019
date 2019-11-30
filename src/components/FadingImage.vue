@@ -82,6 +82,7 @@ img{position:absolute;
 transform: translate(-50%,-50%);
 border-style: solid;
 border-width: 5px;
+z-index: 1;
 }
 
 .origin-rijks {

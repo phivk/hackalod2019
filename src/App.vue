@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+
+    <div id="gui_container">
+      <div id="gui">
+          <h1> Niet te Vergeten
+           </h1>
+
+      </div>
+    </div>
+
+    <div id="images_container">
+
     <FadingImage
       v-for="(img, index) in images"
       :imgURL="img.representation[0].id"
@@ -9,6 +20,7 @@
       v-on:breed="onBreed"
       v-on:remove="onRemove"
     />
+  </div>
   </div>
 </template>
 
@@ -87,8 +99,45 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  position: relative;
+  margin-top: 0;
 }
+
+#gui_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+h1 {
+  font-family: "Avenir", Helvetica, sans-serif;
+  text-size: 22px;
+  text-align: center;
+  color: black;
+  margin: 30px 0 30px 0;
+  line-height: 36px;
+}
+
+p {
+  margin: 0;
+  text-align: left;
+  text-size: 22px;
+}
+
+#gui {
+  padding: 0 35px;
+  background-color: white;
+}
+
+#images_container {
+  position: relative;
+  z-index: 1;
+}
+
 body{background-color: #222;}
 
 </style>
