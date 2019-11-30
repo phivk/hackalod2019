@@ -78,6 +78,17 @@ export default {
 img{position:absolute;
 transform: translate(-50%,-50%);
 border-style: solid;
-border-width: 10px;
+border-width: 5px;
 }
+
+.origin-rijks {
+  border-color: #4089ff;
+}
+
+.origin-volks {
+  border-color: #ffc940;
+}
+
+
+
 </style>
