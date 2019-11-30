@@ -66,10 +66,25 @@ export default {
     randomIntFromInterval(min, max) {
       // min and max included
       return Math.floor(Math.random() * (max - min + 1) + min);
+    },
+    get_data(url, data_to_send) {
+      var tmp = [];
+      $.ajax({method: 'GET',
+          url: url, 
+            data: data_to_send,
+            xhrFields: {
+                withCredentials: false
+          },
+            success: function(data, status) {
+             tmp.push(data);
+          }})
+      if(tmp !== undefined || tmp.length !== 0) {
+        return tmp
+      }
     }
   },
   created: function() {
-    // const URL = "http://172.16.45.236:5000/seed";
+    const URL = "http://172.16.45.236:5000/seed";
     // const response_uri = "http://hdl.handle.net/10934/RM0001.COLLECT.321537";
     // const response_url =
     //   "https://lh3.googleusercontent.com/S3wgRasrmmAkDv4PrS1TkUSvnVL4ve-Gpv6oIhutvCCqlqvayWaqBYbnSrlE6X5HrJl2x5yLQuIgm-MO7n3uWdPUOg=s0";
@@ -82,6 +97,7 @@ export default {
     //   }
     // );
     // console.log(this.images);
+    this.messsages = get_data(URL, {hello: "world!"})
   }
 };
 </script>
