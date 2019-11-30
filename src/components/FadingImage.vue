@@ -1,6 +1,6 @@
 <template>
   <img
-    :src="imgSrc"
+    :src="imgURL"
     alt="fading image"
     :style="{ opacity: life, width: life * 25 + '%', top: ypos + 'px', left: xpos + 'px', borderColor: border}"
     v-on:click="feed()"
@@ -20,8 +20,11 @@ export default {
     };
   },
   props: {
-    imgSrc: {
+    imgURL: {
       type: String
+    },
+    imgURI:{
+        type: String
     }
   },
   methods: {
@@ -43,8 +46,8 @@ export default {
     },
     breed() {
       //make children!
-      this.$emit("breed");
-      this.tint = 1;
+      this.$emit("breed", this.xpos, this.ypos, this.imgURL, this.imgURI);
+        
     },
     randomIntFromInterval(min, max) {
       // min and max included
@@ -58,7 +61,7 @@ export default {
   created: function () {
     // `this` points to the vm instance
     let padding = 200;
-    console.log('a is: ' + this.life);
+    console.log('a is: ' + this.imgURL);
     this.xpos = this.randomIntFromInterval(padding,screen.width-padding);
     this.ypos = this.randomIntFromInterval(padding,screen.height-padding);
   },

@@ -2,7 +2,8 @@
   <div id="app">
     <FadingImage
       v-for="(img, index) in images"
-      :imgSrc="img.representation[0].id"
+      :imgURL="img.representation[0].id"
+      :imgURI="img.id"
       :key="img.id+Math.random().toString()"
       v-on:breed="onBreed"
       v-on:remove="onRemove(index)"
@@ -31,8 +32,12 @@ export default {
     };
   },
   methods: {
-    onBreed() {
-      console.log("birth!");
+    onBreed(xpos, ypos, parent_url, parent_uri) {
+      console.log("birth! " + xpos + " " + ypos);
+      const URL = "http://172.16.45.236:5000/vispa";
+      var newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
+      console.log(newImage);
+      this.images.push(newImage);
     },
     onRemove(index) {
       console.log("REMOVE");
