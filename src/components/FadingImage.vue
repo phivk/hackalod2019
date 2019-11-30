@@ -2,7 +2,7 @@
   <img
     :src="imgURL"
     alt="fading image"
-    :style="{ opacity: life, width: life * 25 + '%', top: ypos + 'px', left: xpos + 'px', borderColor: border}"
+    :style="{ opacity: life, width: life * 25 + '%', top: ypos + 'px', left: xpos + 'px'}"
     v-on:click="feed()"
   >
 </template>
@@ -73,26 +73,28 @@ export default {
     this.$nextTick(function() {
       this.animationID = requestAnimationFrame(this.fade);
     });
+    // console.log(this.imgURI);
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-img{position:absolute;
-transform: translate(-50%,-50%);
-border-style: solid;
-border-width: 5px;
-z-index: 1;
+img{
+  position:absolute;
+  transform: translate(-50%,-50%);
+  border-style: solid;
+  border-width: 5px;
+  z-index: 1;
 }
 
-.origin-rijks {
+/*.origin-rijks {
   border-color: #4089ff;
 }
 
 .origin-volks {
   border-color: #ffc940;
-}
+}*/
 
 
 

@@ -47,22 +47,21 @@ export default {
   },
   methods: {
     onBreed(xpos, ypos, parent_url, parent_uri) {
-      console.log("birth! " + xpos + " " + ypos);
       const URL = "http://172.16.45.236:5000/vispa";
-      var newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
-      console.log(newImage);
+      let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
+      // let originClass = newImage
       this.images.push(newImage);
     },
     onRemove(index, imgURL, imgURI) {
-      console.log("onRemove");
-      console.log(index);
+      // console.log("onRemove");
+      // console.log(index);
       this.$delete(this.images, index);
     },
     onSpawn(parent_url, parent_uri){
       // let URL = this.LODURLs[this.randomIntFromInterval(0,2)];
       let URL = this.LODURLs[0];
       let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[this.randomIntFromInterval(0,5)];
-      console.log(newImage);
+      // console.log(newImage);
       this.images.push(newImage);
     },
     randomIntFromInterval(min, max) {
