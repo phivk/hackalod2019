@@ -5,9 +5,9 @@
       :imgURL="img.representation[0].id"
       :imgURI="img.id"
       :key="img.id+Math.random().toString()"
+      :index="index"
       v-on:breed="onBreed"
-      v-on:spawn="onSpawn"
-      v-on:remove="onRemove(index)"
+      v-on:remove="onRemove"
     />
   </div>
 </template>
@@ -40,9 +40,10 @@ export default {
       console.log(newImage);
       this.images.push(newImage);
     },
-    onRemove(index) {
-      console.log("REMOVE");
-      this.images.splice(index, 1);
+    onRemove(index, imgURL, imgURI) {
+      console.log("onRemove");
+      console.log(index);
+      this.$delete(this.images, index);
     },
     onSpawn(parent_url, parent_uri){
       // let URL = this.LODURLs[this.randomIntFromInterval(0,2)];

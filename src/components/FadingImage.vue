@@ -25,6 +25,9 @@ export default {
     },
     imgURI:{
         type: String
+    },
+    index:{
+        type: Number
     }
   },
   methods: {
@@ -34,8 +37,7 @@ export default {
         requestAnimationFrame(this.fade);
       } else {
         cancelAnimationFrame(this.animationID);
-        this.$emit("remove");
-        this.$emit("spawn", this.imgURL, this.imgURI);
+        this.$emit("remove", this.index, this.imgURL, this.imgURI);
       }
     },
     feed() {
