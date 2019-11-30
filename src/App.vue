@@ -45,7 +45,8 @@ export default {
       this.spawn();
     },
     spawn(){
-      let URL = this.LODURLs[this.randomIntFromInterval(0,2)];
+      // let URL = this.LODURLs[this.randomIntFromInterval(0,2)];
+      let URL = this.LODURLs[0];
       let newImage = this.get_data(URL, {uri: "https://hdl.handle.net/20.500.11840/1"})[this.randomIntFromInterval(0,5)];
       console.log(newImage);
       this.images.push(newImage);
