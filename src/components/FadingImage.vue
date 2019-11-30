@@ -2,7 +2,7 @@
   <img
     :src="imgSrc"
     alt="fading image"
-    :style="{ opacity: life, width: life * 25 + '%'}"
+    :style="{ opacity: life, width: life * 25 + '%', top: randy + 'px', left: randx + 'px', borderColor: border}"
     v-on:click="feed()"
   >
 </template>
@@ -12,7 +12,10 @@ export default {
   name: "FadingImage",
   data: function() {
     return {
-      life: 1.0
+      life: 1.0,
+      randx: 1,
+      randy: 1,
+      border: 'blue'
     };
   },
   props: {
@@ -43,7 +46,19 @@ export default {
     breed() {
       //make children!
       this.$emit("breed");
+      this.tint = 1;
+    },
+    randomIntFromInterval(min, max) {
+      // min and max included
+      return Math.floor(Math.random() * (max - min + 1) + min);
     }
+  },
+  created: function () {
+    // `this` points to the vm instance
+    let padding = 200;
+    console.log('a is: ' + this.life);
+    this.randx = this.randomIntFromInterval(padding,screen.width-padding);
+    this.randy = this.randomIntFromInterval(padding,screen.height-padding);
   },
   mounted: function() {
     this.$nextTick(function() {
@@ -55,6 +70,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-img{position:absolute
+img{position:absolute;
+transform: translate(-50%,-50%);
+border-style: solid;
+border-width: 10px;
 }
 </style>
