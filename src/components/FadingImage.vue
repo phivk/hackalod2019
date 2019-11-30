@@ -15,14 +15,12 @@ export default {
       life: 1.0,
       randx: 1,
       randy: 1,
-      border: 'blue'
+      border: 'blue',
+      animationID: ""
     };
   },
   props: {
     imgSrc: {
-      type: String
-    },
-    animationID: {
       type: String
     }
   },
