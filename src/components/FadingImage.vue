@@ -15,14 +15,12 @@ export default {
       life: 1.0,
       xpos: 1,
       ypos: 1,
-      border: 'blue'
+      border: 'blue',
+      animationID: ""
     };
   },
   props: {
     imgSrc: {
-      type: String
-    },
-    animationID: {
       type: String
     }
   },

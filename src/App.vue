@@ -3,7 +3,7 @@
     <FadingImage
       v-for="(img, index) in images"
       :imgSrc="img.representation[0].id"
-      :key="img.id"
+      :key="img.id+Math.random().toString()"
       v-on:breed="onBreed"
       v-on:remove="onRemove(index)"
     />
@@ -22,7 +22,12 @@ export default {
   },
   data: function() {
     return {
-      images: []
+      images: [],
+      LODURLs: [
+        "https://v2.bencomp.nl/year",
+        "https://v2.bencomp.nl/location",
+        "https://v2.bencomp.nl/technique",
+      ]
     };
   },
   methods: {
@@ -32,6 +37,13 @@ export default {
     onRemove(index) {
       console.log("REMOVE");
       this.images.splice(index, 1);
+      this.spawn();
+    },
+    spawn(){
+      let URL = this.LODURLs[this.randomIntFromInterval(0,2)];
+      let newImage = this.get_data(URL, {uri: "https://hdl.handle.net/20.500.11840/1"})[0];
+      console.log(newImage);
+      this.images.push(newImage);
     },
     randomIntFromInterval(min, max) {
       // min and max included
