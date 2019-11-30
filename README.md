@@ -1,6 +1,8 @@
 # "Niet te vergeten"
 
-Hacked in 19 hours during [HackaLOD 2019](https://hackalod.com/) at [Radio Kootwijk](https://en.wikipedia.org/wiki/Radio_Kootwijk).
+An interactive installation to let museum visitors explore the long tail of scarcely visited artworks of the [Rijksmuseum](https://data.rijksmuseum.nl/) & [Volkenkunde](https://www.volkenkunde.nl/en) collection, powered by [Linked Open Data](http://linkeddata.org/).
+
+⚡️ Hacked in 19 hours during [HackaLOD 2019](https://hackalod.com/) at [Radio Kootwijk](https://en.wikipedia.org/wiki/Radio_Kootwijk).
 
 🏆 Winner of the HackaLOD Audience Award
 
