@@ -2,7 +2,7 @@
   <img
     :src="imgSrc"
     alt="fading image"
-    :style="{ opacity: life, width: life * 25 + '%', top: randy + 'px', left: randx + 'px', borderColor: border}"
+    :style="{ opacity: life, width: life * 25 + '%', top: ypos + 'px', left: xpos + 'px', borderColor: border}"
     v-on:click="feed()"
   >
 </template>
@@ -13,8 +13,8 @@ export default {
   data: function() {
     return {
       life: 1.0,
-      randx: 1,
-      randy: 1,
+      xpos: 1,
+      ypos: 1,
       border: 'blue'
     };
   },
@@ -51,14 +51,18 @@ export default {
     randomIntFromInterval(min, max) {
       // min and max included
       return Math.floor(Math.random() * (max - min + 1) + min);
-    }
+    },
+    point_within_circle(cx, cy, R) {
+	   var angle = Math.random()*Math.PI*2
+	   return [(Math.cos(angle)*R) + cx,(Math.sin(angle)*R) + cy]
+       }
   },
   created: function () {
     // `this` points to the vm instance
     let padding = 200;
     console.log('a is: ' + this.life);
-    this.randx = this.randomIntFromInterval(padding,screen.width-padding);
-    this.randy = this.randomIntFromInterval(padding,screen.height-padding);
+    this.xpos = this.randomIntFromInterval(padding,screen.width-padding);
+    this.ypos = this.randomIntFromInterval(padding,screen.height-padding);
   },
   mounted: function() {
     this.$nextTick(function() {
