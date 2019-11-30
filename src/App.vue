@@ -22,34 +22,7 @@ export default {
   },
   data: function() {
     return {
-      images: [
-        {
-          "@context": "https://linked.art/ns/v1/linked-art.json",
-          id: "http://hdl.handle.net/10934/RM0001.COLLECT.326",
-          representation: [
-            {
-              _label: "Rijksmuseum Image API",
-              id:
-                "https://lh3.googleusercontent.com/_DBa0zX8Vx1t8IA2oOyOnWito00trZIY7XabnX8QyKG3VSsTvNuc8hq9jyoNgPz--O9z-L71QQ-vWnQOwoDtUYjBRWkc=s0",
-              type: "VisualItem"
-            }
-          ],
-          type: "HumanMadeObject"
-        },
-        {
-          "@context": "https://linked.art/ns/v1/linked-art.json",
-          id: "http://hdl.handle.net/10934/RM0001.COLLECT.327",
-          representation: [
-            {
-              _label: "Rijksmuseum Image API",
-              id:
-                "https://lh3.googleusercontent.com/3lZ51I00AIa5KZ7g0ta82UAOJsHV_Tab_OnVqTcLx_Wi2Un22F-tZzWkwcYWOqoaLEInUfce9GVIWnKfbcBkdAgcKZE=s0",
-              type: "VisualItem"
-            }
-          ],
-          type: "HumanMadeObject"
-        }
-      ]
+      images: []
     };
   },
   methods: {
@@ -86,19 +59,7 @@ export default {
   },
   created: function() {
     const URL = "http://172.16.45.236:5000/seed";
-    // const response_uri = "http://hdl.handle.net/10934/RM0001.COLLECT.321537";
-    // const response_url =
-    //   "https://lh3.googleusercontent.com/S3wgRasrmmAkDv4PrS1TkUSvnVL4ve-Gpv6oIhutvCCqlqvayWaqBYbnSrlE6X5HrJl2x5yLQuIgm-MO7n3uWdPUOg=s0";
-    // // console.l'g("crea'ed");
-    // $.get(URL, { uri: response_uri, url: response_url }, function(
-    //     data,status) {
-    //     this.images = data;
-    //     console.log(data);
-    //     console.log(status);
-    //   }
-    // );
-    // console.log(this.images);
-    this.messsages = get_data(URL, {hello: "world!"})
+    this.images = this.get_data(URL, {hello: "world!"})
   }
 };
 </script>
