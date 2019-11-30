@@ -29,9 +29,6 @@ export default {
     onBreed() {
       console.log("birth!");
     },
-    onDeath() {
-      console.log("death!");
-    },
     onRemove(index) {
       console.log("REMOVE");
       this.images.splice(index, 1);
