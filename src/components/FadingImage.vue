@@ -12,7 +12,7 @@ export default {
   name: "FadingImage",
   data: function() {
     return {
-      death_rate: 0.001,
+      death_rate: 0.0015,
       life: 1.0,
       xpos: 1,
       ypos: 1,
