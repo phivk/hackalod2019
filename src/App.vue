@@ -67,23 +67,23 @@ export default {
       // min and max included
       return Math.floor(Math.random() * (max - min + 1) + min);
     },
-   get_data(url, data_to_send) {
-    var tmp = null;
-    $.ajax({method: 'GET',
-            async: false,
-            url: url, 
-            data: data_to_send,
-            xhrFields: {
-              withCredentials: false
-            },
-            success: function(data, status) {
-             tmp = data;
-          }})
-    if(tmp !== undefined && tmp.length !== null) {
-      return tmp
-    }
+    get_data(url, data_to_send) {
+      var tmp = null;
+      $.ajax({method: 'GET',
+              async: false,
+              url: url, 
+              data: data_to_send,
+              xhrFields: {
+                withCredentials: false
+              },
+              success: function(data, status) {
+               tmp = data;
+            }})
+      if(tmp !== undefined && tmp.length !== null) {
+        return tmp
+      }
+    },
   },
-
   created: function() {
     const URL = "http://172.16.45.236:5000/seed";
     // const response_uri = "http://hdl.handle.net/10934/RM0001.COLLECT.321537";
