@@ -15,3 +15,21 @@ Made with ❤️ by team ExpLOD:
 - 🤯 Philo
 - 🤯 Edward
 - 🤯 Ben
+
+## Installation
+
+install dependencies
+
+    npm install
+
+serve development version
+
+    npm run serve
+
+build production version to `/dist` directory
+
+    npm run build
+
+then serve `/dist`, e.g. using [`serve`](https://github.com/zeit/serve)
+
+    serve -s dist
