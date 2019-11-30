@@ -55,12 +55,13 @@ export default {
   methods: {
     onBreed() {
       console.log("birth!");
-      console.log(this.images.length);
+    },
+    onDeath() {
+      console.log("death!");
     },
     onRemove(index) {
       console.log("REMOVE");
       this.images.splice(index, 1);
-      console.log(this.images.length);
     },
     randomIntFromInterval(min, max) {
       // min and max included
