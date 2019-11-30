@@ -12,6 +12,7 @@ export default {
   name: "FadingImage",
   data: function() {
     return {
+      death_rate: 0.001,
       life: 1.0,
       xpos: 1,
       ypos: 1,
@@ -33,7 +34,7 @@ export default {
   methods: {
     fade() {
       if (this.life > 0) {
-        this.life -= 0.001;
+        this.life -= this.death_rate;
         requestAnimationFrame(this.fade);
       } else {
         cancelAnimationFrame(this.animationID);

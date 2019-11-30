@@ -36,6 +36,7 @@ export default {
   },
   data: function() {
     return {
+      death_rate: 0.001,
       images: [],
       LODURLs: [
         "https://v2.bencomp.nl/year",
