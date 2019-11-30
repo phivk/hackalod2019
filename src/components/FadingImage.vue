@@ -35,6 +35,7 @@ export default {
       } else {
         cancelAnimationFrame(this.animationID);
         this.$emit("remove");
+        this.$emit("spawn", this.imgURL, this.imgURI);
       }
     },
     feed() {
@@ -61,7 +62,7 @@ export default {
   created: function () {
     // `this` points to the vm instance
     let padding = 200;
-    console.log('a is: ' + this.imgURL);
+    //console.log('a is: ' + this.imgURL);
     this.xpos = this.randomIntFromInterval(padding,screen.width-padding);
     this.ypos = this.randomIntFromInterval(padding,screen.height-padding);
   },

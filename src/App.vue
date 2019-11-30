@@ -6,6 +6,7 @@
       :imgURI="img.id"
       :key="img.id+Math.random().toString()"
       v-on:breed="onBreed"
+      v-on:spawn="onSpawn"
       v-on:remove="onRemove(index)"
     />
   </div>
@@ -42,12 +43,11 @@ export default {
     onRemove(index) {
       console.log("REMOVE");
       this.images.splice(index, 1);
-      this.spawn();
     },
-    spawn(){
+    onSpawn(parent_url, parent_uri){
       // let URL = this.LODURLs[this.randomIntFromInterval(0,2)];
       let URL = this.LODURLs[0];
-      let newImage = this.get_data(URL, {uri: "https://hdl.handle.net/20.500.11840/1"})[this.randomIntFromInterval(0,5)];
+      let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[this.randomIntFromInterval(0,5)];
       console.log(newImage);
       this.images.push(newImage);
     },
