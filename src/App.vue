@@ -70,15 +70,15 @@ export default {
    get_data(url, data_to_send) {
     var tmp = null;
     $.ajax({method: 'GET',
-        async: false,
-        url: url, 
-          data: data_to_send,
-          xhrFields: {
+            async: false,
+            url: url, 
+            data: data_to_send,
+            xhrFields: {
               withCredentials: false
-        },
-          success: function(data, status) {
-           tmp = data;
-        }})
+            },
+            success: function(data, status) {
+             tmp = data;
+          }})
     if(tmp !== undefined && tmp.length !== null) {
       return tmp
     }
