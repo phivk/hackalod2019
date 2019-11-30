@@ -1,0 +1,58 @@
+<template>
+  <img
+    :src="imgSrc"
+    alt="fading image"
+    :style="{ opacity: life, width: life * 25 + '%'}"
+    v-on:click="feed()"
+  >
+</template>
+
+<script>
+export default {
+  name: "FadingImage",
+  data: function() {
+    return {
+      life: 1.0
+    };
+  },
+  props: {
+    imgSrc: {
+      type: String
+    },
+    animationID: {
+      type: String
+    }
+  },
+  methods: {
+    fade() {
+      if (this.life > 0) {
+        this.life -= 0.001;
+        requestAnimationFrame(this.fade);
+      } else {
+        cancelAnimationFrame(this.animationID);
+        this.$emit("remove");
+      }
+    },
+    feed() {
+      if (this.life > 1) {
+        this.breed();
+      } else if (this.life > 0) {
+        this.life += 0.1;
+      }
+    },
+    breed() {
+      //make children!
+      this.$emit("breed");
+    }
+  },
+  mounted: function() {
+    this.$nextTick(function() {
+      this.animationID = requestAnimationFrame(this.fade);
+    });
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>
