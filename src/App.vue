@@ -49,9 +49,10 @@ export default {
     onBreed(xpos, ypos, parent_url, parent_uri) {
       const URL = "http://172.16.45.236:5000/vispa";
       let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
-      // let originClass = newImage
+      // TODO set origin- class based on origin of returned URI
       this.images.push(newImage);
     },
+    // eslint-disable-next-line
     onRemove(index, imgURL, imgURI) {
       // console.log("onRemove");
       // console.log(index);
@@ -59,7 +60,7 @@ export default {
     },
     onSpawn(parent_url, parent_uri){
       // let URL = this.LODURLs[this.randomIntFromInterval(0,2)];
-      let URL = this.LODURLs[0];
+      let URL = this.LODURLs[0]; // stick to year API for now
       let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[this.randomIntFromInterval(0,5)];
       // console.log(newImage);
       this.images.push(newImage);
@@ -77,6 +78,7 @@ export default {
               xhrFields: {
                 withCredentials: false
               },
+              // eslint-disable-next-line
               success: function(data, status) {
                tmp = data;
             }})

@@ -58,9 +58,9 @@ export default {
       return Math.floor(Math.random() * (max - min + 1) + min);
     },
     point_within_circle(cx, cy, R) {
-	   var angle = Math.random()*Math.PI*2
-	   return [(Math.cos(angle)*R) + cx,(Math.sin(angle)*R) + cy]
-       }
+      let angle = Math.random()*Math.PI*2;
+      return [(Math.cos(angle)*R) + cx,(Math.sin(angle)*R) + cy];
+    }
   },
   created: function () {
     // `this` points to the vm instance
