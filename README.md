@@ -6,7 +6,7 @@ An interactive installation to let museum visitors explore the long tail of scar
 
 🏆 Winner of the HackaLOD Audience Award
 
-🖼 [Slides](https://docs.google.com/presentation/d/11OKPjXcZbr1WMmL5pSC-u_VLk9wVoUnKwvBComF9FjQ/edit?usp=sharing)
+🖼 [Slides](https://docs.google.com/presentation/d/11OKPjXcZbr1WMmL5pSC-u_VLk9wVoUnKwvBComF9FjQ/edit?usp=sharing) ([PDF](https://hackalod.com/wp-content/uploads/2019/12/Presentatie-HackaLOD-2019-team-ExpLOD.pdf))
 
 📰 [NDE: "Winnaars HackaLOD 2019"](https://www.netwerkdigitaalerfgoed.nl/news/winnaars-hackalod-2019/)
 
