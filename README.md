@@ -12,6 +12,8 @@ An interactive installation to let museum visitors explore the long tail of scar
 
 📰 [KB: "Winnaars HackaLOD 2019"](https://www.kb.nl/nieuws/2019/winnaars-hackalod-2019)
 
+📰 [HackaLOD: "Teams & Resultaten"](https://hackalod.com/index.php/2019/12/24/teams-en-resultaten-2019/)
+
 
 Made with ❤️ by team ExpLOD:
 
