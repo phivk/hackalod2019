@@ -70,21 +70,52 @@ export default {
       return Math.floor(Math.random() * (max - min + 1) + min);
     },
     get_data(url, data_to_send) {
-      var tmp = null;
-      $.ajax({method: 'GET',
-              async: false,
-              url: url, 
-              data: data_to_send,
-              xhrFields: {
-                withCredentials: false
-              },
-              // eslint-disable-next-line
-              success: function(data, status) {
-               tmp = data;
-            }})
-      if(tmp !== undefined && tmp.length !== null) {
-        return tmp
-      }
+      ///////////////////////////////////////////////////////
+      // temporarily hard code response til API is working //
+      //////////////////////////// //////////////////////////
+      
+      // var tmp = null;
+      // $.ajax({method: 'GET',
+      //         async: false,
+      //         url: url, 
+      //         data: data_to_send,
+      //         xhrFields: {
+      //           withCredentials: false
+      //         },
+      //         // eslint-disable-next-line
+      //         success: function(data, status) {
+      //          tmp = data;
+      //       }})
+      // if(tmp !== undefined && tmp.length !== null) {
+      //   return tmp
+      // }
+      return [
+        {
+          "@context": "https://linked.art/ns/v1/linked-art.json",
+          "id": "http://hdl.handle.net/10934/RM0001.COLLECT.326",
+          "representation": [
+            {
+              "_label": "Rijksmuseum Image API",
+              "id": "https://lh3.googleusercontent.com/_DBa0zX8Vx1t8IA2oOyOnWito00trZIY7XabnX8QyKG3VSsTvNuc8hq9jyoNgPz--O9z-L71QQ-vWnQOwoDtUYjBRWkc=s0",
+              "type": "VisualItem"
+            }
+          ],
+          "type": "HumanMadeObject"
+        },
+        {
+          "@context": "https://linked.art/ns/v1/linked-art.json",
+          "id": "http://hdl.handle.net/10934/RM0001.COLLECT.327",
+          "representation": [
+            {
+              "_label": "Rijksmuseum Image API",
+              "id": "https://lh3.googleusercontent.com/3lZ51I00AIa5KZ7g0ta82UAOJsHV_Tab_OnVqTcLx_Wi2Un22F-tZzWkwcYWOqoaLEInUfce9GVIWnKfbcBkdAgcKZE=s0",
+              "type": "VisualItem"
+            }
+          ],
+          "type": "HumanMadeObject"
+        }
+      ]
+
     },
   },
   created: function() {
