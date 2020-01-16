@@ -49,7 +49,9 @@ export default {
     onBreed(xpos, ypos, parent_url, parent_uri) {
       const URL = "http://172.16.45.236:5000/vispa";
       // let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
-      let newImage = this.get_data_temp()[0];
+      let sampleImages = this.get_data_temp()
+      let randomImage = sampleImages[Math.floor(Math.random()*sampleImages.length)];
+      let newImage = randomImage
       // TODO set origin- class based on origin of returned URI
       this.images.push(newImage);
     },
@@ -95,7 +97,7 @@ export default {
       ///////////////////////////////////////////////////////
       // temporarily hard code response til API is working //
       //////////////////////////// //////////////////////////
-      return [
+      const sampleImages = [
         {
           "@context": "https://linked.art/ns/v1/linked-art.json",
           "id": "http://hdl.handle.net/10934/RM0001.COLLECT.326",
@@ -121,6 +123,7 @@ export default {
           "type": "HumanMadeObject"
         }
       ]
+      return sampleImages
     },
   },
   created: function() {
