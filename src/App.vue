@@ -47,7 +47,9 @@ export default {
   },
   methods: {
     onBreed(xpos, ypos, parent_url, parent_uri) {
-      const URL = "http://172.16.45.236:5000/vispa";
+      // Breed child image that is visually similar
+
+      // const URL = "http://172.16.45.236:5000/vispa";
       // let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
       let sampleImages = this.get_data_temp()
       let randomImage = sampleImages[Math.floor(Math.random()*sampleImages.length)];
@@ -61,7 +63,9 @@ export default {
       // console.log(index);
       this.$delete(this.images, index);
     },
-    onSpawn(parent_url, parent_uri){
+    onSpawn(parent_url, parent_uri){ 
+      // Spawn new image that is similar based on LOD metadata
+
       // let URL = this.LODURLs[this.randomIntFromInterval(0,2)];
       let URL = this.LODURLs[0]; // stick to year API for now
       let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[this.randomIntFromInterval(0,5)];
