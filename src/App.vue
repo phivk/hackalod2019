@@ -17,6 +17,8 @@
       :imgURI="img.id"
       :key="img.id+Math.random().toString()"
       :index="index"
+      :xpos="img.xpos"
+      :ypos="img.ypos"
       v-on:breed="onBreed"
       v-on:remove="onRemove"
     />
@@ -42,7 +44,8 @@ export default {
         "https://v2.bencomp.nl/year",
         "https://v2.bencomp.nl/location",
         "https://v2.bencomp.nl/technique",
-      ]
+      ],
+      padding: 200,
     };
   },
   methods: {
@@ -52,10 +55,14 @@ export default {
       // const URL = "http://172.16.45.236:5000/vispa";
       // let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
       let sampleImages = this.get_data_temp()
-      let randomImage = sampleImages[Math.floor(Math.random()*sampleImages.length)];
+      let randomImage = sampleImages[Math.floor(Math.random()*sampleImages.length)]
       let newImage = randomImage
       // TODO set origin- class based on origin of returned URI
-      this.images.push(newImage);
+
+      // give newImage a position near its parent
+      newImage.xpos = xpos + this.randomIntFromInterval(-this.padding, this.padding)
+      newImage.ypos = ypos + this.randomIntFromInterval(-this.padding, this.padding)
+      this.images.push(newImage)
     },
     // eslint-disable-next-line
     onRemove(index, imgURL, imgURI) {
@@ -97,6 +104,12 @@ export default {
         return tmp
       }
     },
+    get_random_pos() {
+      return {
+        'xpos': this.randomIntFromInterval(this.padding, window.innerWidth - this.padding),
+        'ypos': this.randomIntFromInterval(this.padding, window.innerHeight - this.padding)
+      }
+    },
     get_data_temp() {
       ///////////////////////////////////////////////////////
       // temporarily hard code response til API is working //
@@ -127,14 +140,18 @@ export default {
           "type": "HumanMadeObject"
         }
       ]
-      return sampleImages
+      // add random xpos and ypos to images
+      let sampleImagesWPos = sampleImages.map(image => {
+        return {...image, ...this.get_random_pos()}
+      })
+      return sampleImagesWPos
     },
   },
   created: function() {
     // const URL = "http://172.16.45.236:5000/seed";
     // this.images = this.get_data(URL, {hello: "world!"})
     this.images = this.get_data_temp()
-  }
+  },
 };
 </script>
 

@@ -14,22 +14,16 @@ export default {
     return {
       death_rate: 0.0015,
       life: 1.0,
-      xpos: 1,
-      ypos: 1,
       border: 'blue',
       animationID: ""
     };
   },
   props: {
-    imgURL: {
-      type: String
-    },
-    imgURI:{
-        type: String
-    },
-    index:{
-        type: Number
-    }
+    xpos: Number,
+    ypos: Number,
+    imgURL: String,
+    imgURI: String,
+    index: Number,
   },
   methods: {
     fade() {
@@ -51,23 +45,11 @@ export default {
     breed() {
       //make children!
       this.$emit("breed", this.xpos, this.ypos, this.imgURL, this.imgURI);
-        
-    },
-    randomIntFromInterval(min, max) {
-      // min and max included
-      return Math.floor(Math.random() * (max - min + 1) + min);
     },
     point_within_circle(cx, cy, R) {
       let angle = Math.random()*Math.PI*2;
       return [(Math.cos(angle)*R) + cx,(Math.sin(angle)*R) + cy];
     }
-  },
-  created: function () {
-    // `this` points to the vm instance
-    let padding = 200;
-    //console.log('a is: ' + this.imgURL);
-    this.xpos = this.randomIntFromInterval(padding,screen.width-padding);
-    this.ypos = this.randomIntFromInterval(padding,screen.height-padding);
   },
   mounted: function() {
     this.$nextTick(function() {
