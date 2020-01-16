@@ -2,7 +2,13 @@
   <img
     :src="imgURL"
     alt="fading image"
-    :style="{ opacity: life, width: life * 25 + '%', top: ypos + 'px', left: xpos + 'px'}"
+    :style="{ 
+      'opacity': life, 
+      'width': life * 25 + '%', 
+      'top': ypos + 'px', 
+      'left': xpos + 'px', 
+      'z-index': zIndex
+    }"
     v-on:click="feed()"
   >
 </template>
@@ -15,7 +21,8 @@ export default {
       death_rate: 0.0015,
       life: 1.0,
       border: 'blue',
-      animationID: ""
+      animationID: "",
+      zIndex: 1,
     };
   },
   props: {
@@ -36,6 +43,7 @@ export default {
       }
     },
     feed() {
+      this.zIndex++
       if (this.life > 1) {
         this.breed();
       } else if (this.life > 0) {
