@@ -177,6 +177,10 @@ p {
   z-index: 1;
 }
 
-body{background-color: #222;}
+body{
+  background-color: #222;
+  margin: 0;
+  overflow: hidden;
+} 
 
 </style>
