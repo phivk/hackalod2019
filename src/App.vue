@@ -48,7 +48,8 @@ export default {
   methods: {
     onBreed(xpos, ypos, parent_url, parent_uri) {
       const URL = "http://172.16.45.236:5000/vispa";
-      let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
+      // let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
+      let newImage = this.get_data_temp()[0];
       // TODO set origin- class based on origin of returned URI
       this.images.push(newImage);
     },
@@ -73,22 +74,27 @@ export default {
       ///////////////////////////////////////////////////////
       // temporarily hard code response til API is working //
       //////////////////////////// //////////////////////////
-      
-      // var tmp = null;
-      // $.ajax({method: 'GET',
-      //         async: false,
-      //         url: url, 
-      //         data: data_to_send,
-      //         xhrFields: {
-      //           withCredentials: false
-      //         },
-      //         // eslint-disable-next-line
-      //         success: function(data, status) {
-      //          tmp = data;
-      //       }})
-      // if(tmp !== undefined && tmp.length !== null) {
-      //   return tmp
-      // }
+
+      var tmp = null;
+      $.ajax({method: 'GET',
+              async: false,
+              url: url, 
+              data: data_to_send,
+              xhrFields: {
+                withCredentials: false
+              },
+              // eslint-disable-next-line
+              success: function(data, status) {
+               tmp = data;
+            }})
+      if(tmp !== undefined && tmp.length !== null) {
+        return tmp
+      }
+    },
+    get_data_temp() {
+      ///////////////////////////////////////////////////////
+      // temporarily hard code response til API is working //
+      //////////////////////////// //////////////////////////
       return [
         {
           "@context": "https://linked.art/ns/v1/linked-art.json",
@@ -115,12 +121,12 @@ export default {
           "type": "HumanMadeObject"
         }
       ]
-
     },
   },
   created: function() {
-    const URL = "http://172.16.45.236:5000/seed";
-    this.images = this.get_data(URL, {hello: "world!"})
+    // const URL = "http://172.16.45.236:5000/seed";
+    // this.images = this.get_data(URL, {hello: "world!"})
+    this.images = this.get_data_temp()
   }
 };
 </script>
