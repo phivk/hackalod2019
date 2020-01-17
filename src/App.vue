@@ -3,7 +3,7 @@
 
     <div id="gui_container">
       <div id="gui">
-          <h1> Niet te Vergeten
+          <h1> Unforgettable
            </h1>
 
       </div>
@@ -54,11 +54,11 @@ export default {
     onBreed(xpos, ypos, parent_url, parent_uri) {
       // Breed child image that is visually similar
 
-      // const URL = "http://172.16.45.236:5000/vispa";
-      // let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
-      let sampleImages = this.get_data_temp()
-      let randomImage = sampleImages[Math.floor(Math.random()*sampleImages.length)]
-      let newImage = randomImage
+      const URL = "http://127.0.0.1:5000/seed";
+      let newImage = this.get_data(URL, {uri: parent_uri, url: parent_url})[0];
+      // let sampleImages = this.get_data_temp()
+      // let randomImage = sampleImages[Math.floor(Math.random()*sampleImages.length)]
+      // let newImage = randomImage
       // TODO set origin- class based on origin of returned URI
 
       // give newImage a position near its parent
@@ -100,7 +100,10 @@ export default {
                tmp = data;
             }})
       if(tmp !== undefined && tmp.length !== null) {
-        return tmp
+        // randomize images positions before returning them
+        return tmp.map(image => {
+          return {...image, ...this.get_random_pos()}
+        })
       }
     },
     get_random_pos() {
@@ -122,10 +125,10 @@ export default {
     },
   },
   created: function() {
-    // const URL = "http://172.16.45.236:5000/seed";
-    // this.images = this.get_data(URL, {hello: "world!"})
-    let sampleImages = this.get_data_temp()
-    this.images = sampleImages.slice(0,this.noStartImages)
+    const URL = "http://127.0.0.1:5000/seed";
+    this.images = this.get_data(URL, {hello: "world!"})
+    // let sampleImages = this.get_data_temp()
+    // this.images = sampleImages.slice(0,this.noStartImages)
   },
 };
 </script>
