@@ -28,6 +28,7 @@
 
 <script>
 import FadingImage from "./components/FadingImage";
+import vispaSampleImages from "./assets/vispa-sample-response.json";
 import JQuery from "jquery";
 let $ = JQuery;
 
@@ -38,6 +39,7 @@ export default {
   },
   data: function() {
     return {
+      sampleImages: vispaSampleImages,
       images: [],
       LODURLs: [
         "https://v2.bencomp.nl/year",
@@ -63,10 +65,7 @@ export default {
       newImage.ypos = ypos + this.randomIntFromInterval(-this.padding, this.padding)
       this.images.push(newImage)
     },
-    // eslint-disable-next-line
     onRemove(index, imgURL, imgURI) {
-      // console.log("onRemove");
-      // console.log(index);
       this.$delete(this.images, index);
     },
     onSpawn(parent_url, parent_uri){ 
@@ -113,32 +112,7 @@ export default {
       ///////////////////////////////////////////////////////
       // temporarily hard code response til API is working //
       //////////////////////////// //////////////////////////
-      const sampleImages = [
-        {
-          "@context": "https://linked.art/ns/v1/linked-art.json",
-          "id": "http://hdl.handle.net/10934/RM0001.COLLECT.326",
-          "representation": [
-            {
-              "_label": "Rijksmuseum Image API",
-              "id": "https://lh3.googleusercontent.com/_DBa0zX8Vx1t8IA2oOyOnWito00trZIY7XabnX8QyKG3VSsTvNuc8hq9jyoNgPz--O9z-L71QQ-vWnQOwoDtUYjBRWkc=s0",
-              "type": "VisualItem"
-            }
-          ],
-          "type": "HumanMadeObject"
-        },
-        {
-          "@context": "https://linked.art/ns/v1/linked-art.json",
-          "id": "http://hdl.handle.net/10934/RM0001.COLLECT.327",
-          "representation": [
-            {
-              "_label": "Rijksmuseum Image API",
-              "id": "https://lh3.googleusercontent.com/3lZ51I00AIa5KZ7g0ta82UAOJsHV_Tab_OnVqTcLx_Wi2Un22F-tZzWkwcYWOqoaLEInUfce9GVIWnKfbcBkdAgcKZE=s0",
-              "type": "VisualItem"
-            }
-          ],
-          "type": "HumanMadeObject"
-        }
-      ]
+      const sampleImages = this.sampleImages
       // add random xpos and ypos to images
       let sampleImagesWPos = sampleImages.map(image => {
         return {...image, ...this.get_random_pos()}
