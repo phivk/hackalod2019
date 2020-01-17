@@ -47,6 +47,7 @@ export default {
         "https://v2.bencomp.nl/technique",
       ],
       padding: 200,
+      noStartImages: 3,
     };
   },
   methods: {
@@ -123,7 +124,8 @@ export default {
   created: function() {
     // const URL = "http://172.16.45.236:5000/seed";
     // this.images = this.get_data(URL, {hello: "world!"})
-    this.images = this.get_data_temp()
+    let sampleImages = this.get_data_temp()
+    this.images = sampleImages.slice(0,this.noStartImages)
   },
 };
 </script>

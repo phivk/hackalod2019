@@ -1,11 +1,11 @@
 [
   {
     "@context": "https://linked.art/ns/v1/linked-art.json",
-    "id": "http://hdl.handle.net/10934/RM0001.COLLECT.682048",
+    "id": "http://hdl.handle.net/10934/RM0001.COLLECT.682049",
     "representation": [
       {
         "_label": "Rijksmuseum Image API",
-        "id": "https://lh3.googleusercontent.com/Hm0admc0da4EyU9vR6t-HjbLdV_Cu4Brau_884esPJFwcbvpOtIaywmRIoDKxFom1UlLhdYCiE5V3vs-70kc1Mz8NJc=s400",
+        "id": "https://lh3.googleusercontent.com/bTnlk-k9zbX-_lZN4QX3Fj3JYXNIBV8Gy9C5jL2MrKBaBhTw95Zn6ve8OH781PJkMsUspEMjg5mPxvfDCdzbXywZAQ8=s400",
         "type": "VisualItem"
       }
     ],
@@ -13,11 +13,11 @@
   },
   {
     "@context": "https://linked.art/ns/v1/linked-art.json",
-    "id": "http://hdl.handle.net/10934/RM0001.COLLECT.682049",
+    "id": "http://hdl.handle.net/10934/RM0001.COLLECT.522253",
     "representation": [
       {
         "_label": "Rijksmuseum Image API",
-        "id": "https://lh3.googleusercontent.com/bTnlk-k9zbX-_lZN4QX3Fj3JYXNIBV8Gy9C5jL2MrKBaBhTw95Zn6ve8OH781PJkMsUspEMjg5mPxvfDCdzbXywZAQ8=s400",
+        "id": "https://lh4.ggpht.com/oajB4KylPvC0IQDAaXSy9gmQOCtaXbxHRk5ObZ5F3vbyHjedTFVAiA7czsnVaHOLNkRnauGc-PAPtvLKtT7_P8aIFw=s400",
         "type": "VisualItem"
       }
     ],
@@ -90,18 +90,6 @@
       {
         "_label": "Rijksmuseum Image API",
         "id": "https://lh3.googleusercontent.com/iCOtfrbP7NzLphJFZ4EIz9Q_Otb7VLIf0VMesq9ugXVNfXThKAF-bcCu9b1CH4LMkuLPLtCniNnue3HBcUJBGfBPWsY=s400",
-        "type": "VisualItem"
-      }
-    ],
-    "type": "HumanMadeObject"
-  },
-  {
-    "@context": "https://linked.art/ns/v1/linked-art.json",
-    "id": "http://hdl.handle.net/10934/RM0001.COLLECT.522253",
-    "representation": [
-      {
-        "_label": "Rijksmuseum Image API",
-        "id": "https://lh4.ggpht.com/oajB4KylPvC0IQDAaXSy9gmQOCtaXbxHRk5ObZ5F3vbyHjedTFVAiA7czsnVaHOLNkRnauGc-PAPtvLKtT7_P8aIFw=s400",
         "type": "VisualItem"
       }
     ],
